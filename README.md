@@ -209,39 +209,9 @@ SchemaChange does has its drawbacks that make Terraformed Snowflake attractive. 
 
 ## Optional Prerequisites
 
-Provision an AWS S3 bucket to hold the Terraform `tfstate` file and update the values in `terraform.tfbackend` file.
+Install Docker on your machine if you wish to run the Terraform code scanners Checkov and Tfsec to check for vulnerabilities in your Terraform code. You can also directly install Checkov and Tfsec on your system, if you wish. 
 
-Make sure that you have set up your AWS credentials file properly. If not, use the AWS CLI command `aws config` to do so.
-
-Your `terraform.tfbackend` file should look something like this:
-
-```powershell
-bucket  = "my-unique-aws-s3-bucket-for-terraform-tfstate-storage" 
-key     = "snowflake-terraform-aws"
-region  = "us-east-1"
-profile = "default"
-```
-
-If you decide to pass on using a AWS S3 bucket to store the Terraform `tfstate` file then comment out the the following code in the `terraform.tf` file
-
-```json
-    aws = {
-      source  = "hashicorp/aws"
-      version = "4.49.0"
-    }
-```
-
-and
-
-```json
-  backend "s3" {
-    key = "terraform.tfbackend"
-  }
-```
-
-Additionally, you will want to remove the `provider "aws" {}` stanza in the `provider.tf` file.
-
-Install Docker on your machine if you wish to run the Terraform code scanners Checkov and Tfsec to check for vulnerabilities in your Terraform code. You can also directly install Checkov and Tfsec on your system, if you wish. Using the docker containers, saves you the headaches of Python version mismatches or having to use virtual environments.
+Using the docker containers, saves you the headaches of Python version mismatches or having to use virtual environments.
 
 ## Mandatory Prerequisites
 
