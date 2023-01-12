@@ -1,0 +1,4 @@
+bucket  = "mrisimmons-terraform-tfstate-storage" # MRI-Citrix (256510717833)
+key     = "snowflake-terraform-aws"
+region  = "us-east-1"
+profile = "prod"
