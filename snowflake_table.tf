@@ -7,46 +7,21 @@ resource "snowflake_table" "this" {
   comment         = each.value["comment"]
   change_tracking = each.value["change_tracking"]
   cluster_by      = each.value["cluster_by"]
-  #data_retention_days = each.value["data_retention_days"] #deprecated
   dynamic "column" {
     for_each = each.value["column"]
-    iterator = item
     content {
-      name     = item.value.name
-      type     = item.value.type
-      comment  = item.value.comment
-      nullable = item.value.nullable
-      ########################################################################
-      #
-      # nested dynamic blocks are not working.
-      #
-      #
-      # Error: Invalid dynamic for_each value
-      #
-      #  on snowflake_table.tf line 20, in resource "snowflake_table" "this":
-      #  20:         for_each =  item.value.default
-      #    ├────────────────
-      #    │ item.value.default is null
-      #
-      # Cannot use a null value in for_each.
-      #
-      #
-      ########################################################################
-      # dynamic "default" {
-      #   for_each = item.value.default
-      #   # tried the following below.
-      #   #for_each = each.value["column"].*.each.value["default"]
-      #   #for_each = each.value["column"].*.default
-      #   iterator = item1
-      #   content {
-      #     sequence = item1.value.sequence
-      #   }
-      # }
-      ########################################################################
-      #
-      # This dynamic block has the same issue 
-      #
-      ########################################################################
+      name     = column.value.name
+      type     = column.value.type
+      comment  = column.value.comment
+      nullable = column.value.nullable
+      dynamic "default" {
+        for_each = each.value["column"].*.default[0]
+        content {
+          sequence =  default.value.sequence
+          expression = default.value.expression
+          constant = default.value.constant
+        }
+      }
       # 
       # dynamic "identity" {
       #   for_each = each.value[item.value.identity]
