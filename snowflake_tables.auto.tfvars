@@ -15,7 +15,7 @@ snowflake_tables = {
         comment  = "id with sequence"
         default = [
           {
-            sequence = "test_schema_1"
+            sequence = "test_sequence_1"
           }
         ]
       },
