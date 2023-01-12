@@ -32,16 +32,16 @@ resource "snowflake_table" "this" {
       #
       #
       ########################################################################
-      dynamic "default" {
-        for_each = item.value.default
-        # tried the following below.
-        #for_each = each.value["column"].*.each.value["default"]
-        #for_each = each.value["column"].*.default
-        iterator = item1
-        content {
-          sequence = item1.value.sequence
-        }
-      }
+      # dynamic "default" {
+      #   for_each = item.value.default
+      #   # tried the following below.
+      #   #for_each = each.value["column"].*.each.value["default"]
+      #   #for_each = each.value["column"].*.default
+      #   iterator = item1
+      #   content {
+      #     sequence = item1.value.sequence
+      #   }
+      # }
       ########################################################################
       #
       # This dynamic block has the same issue 
