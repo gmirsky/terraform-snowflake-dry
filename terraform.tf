@@ -7,11 +7,8 @@ terraform {
     }
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "0.54.0"
+      version = "0.55.1"
     }
   }
-  # backend "s3" {
-  #   key = "terraform.tfbackend"
-  # }
 }
 #
