@@ -21,7 +21,7 @@ Current error is
 
 The current variable driving the resource statement is resolved to the following values.
 
-```json
+```
 snowflake_tables       = {
       + "test_table_1" = {
           + change_tracking     = false
@@ -99,7 +99,7 @@ snowflake_tables       = {
 
 The Terraform code that is failing is below.
 
-```json
+```
 resource "snowflake_table" "this" {
   provider        = snowflake.sysadmin
   for_each        = var.snowflake_tables
