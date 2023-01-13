@@ -35,8 +35,4 @@ resource "snowflake_table" "this" {
     snowflake_schema.this
   ]
 }
-# output for debugging
-output "zzz_snowflake_tables" {
-  value = var.snowflake_tables
-}
 #
