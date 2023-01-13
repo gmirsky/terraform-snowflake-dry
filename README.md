@@ -14,7 +14,7 @@ The Terraform code in this repository uses `for_each` loops to drive generic Ter
 
 ### Code Structure
 
-The Terraform statements are broken out into their own self explanatory named files for ease of the reader to examine the code and how it functions. Each Terraform resource resides in its own file and has a corresponding `*.auto.tfvars` file supplying the data that the Terraform resources requires to operate.
+The Terraform statements are broken out into their own self explanatory named files for ease of the reader to examine the code and how it functions. Each Terraform resource resides in its own file and has a corresponding `*.auto.tfvars` file supplying the data that the Terraform resources requires to operate. This allows the Terraform developer to easily find the resource statement and the associated statements easily when debugging since the error messages will always state the offending resource name. This is a technique learned from coding many multi-cloud Terraform deployments.
 
 It is the aim of this repository to keep the Terraform code as static as possible and use the accompanying `tfvars` files to make the changes to assets that the reader wishes to provision or change.
 
