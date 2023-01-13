@@ -32,8 +32,8 @@ variable "snowflake_tables" {
                 list(
                   object(
                     {
-                      start_num = number
-                      step_num  = number
+                      start_num = optional(number)
+                      step_num  = optional(number)
                     }
                   )
                 )

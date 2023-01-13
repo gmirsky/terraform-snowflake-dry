@@ -18,12 +18,14 @@ snowflake_tables = {
             sequence = "test_sequence_1"
           }
         ]
+        identity = []
       },
       {
         name     = "identity"
         type     = "NUMBER(38,0)"
         nullable = true
         comment  = "identity"
+        default  = []
         identity = [
           {
             start_num = 1
@@ -36,18 +38,24 @@ snowflake_tables = {
         type     = "text"
         comment  = "data column"
         nullable = false
+        default  = []
+        identity = []
       },
       {
         name     = "DATE"
         type     = "TIMESTAMP_NTZ(9)"
         comment  = "date column"
         nullable = false
+        default  = []
+        identity = []
       },
       {
         name     = "extra"
         type     = "VARIANT"
         comment  = "extra data"
         nullable = true
+        default  = []
+        identity = []
       }
     ]
     primary_key = {

@@ -15,22 +15,20 @@ resource "snowflake_table" "this" {
       comment  = column.value.comment
       nullable = column.value.nullable
       dynamic "default" {
-        for_each = each.value["column"].*.default[0]
+        for_each = each.value["column"][column.key].*.default[0]
         content {
-          sequence =  default.value.sequence
+          sequence   = default.value.sequence
           expression = default.value.expression
-          constant = default.value.constant
+          constant   = default.value.constant
         }
       }
-      # 
-      # dynamic "identity" {
-      #   for_each = each.value[item.value.identity]
-      #   iterator = item
-      #   content {
-      #     start_num = item.value.start_num
-      #     step_num  = item.value.step_num
-      #   }
-      # }
+      dynamic "identity" {
+        for_each = each.value["column"][column.key].*.identity[0]
+        content {
+          start_num = identity.value.start_num
+          step_num  = identity.value.step_num
+        }
+      }
     }
   }
   depends_on = [
