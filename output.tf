@@ -1,6 +1,17 @@
-output "snowflake_database" {
-  value     = module.snowflake_database.snowflake_database_id
-  sensitive = false
+output "snowflake_database_id" {
+  value = {
+    for key, value in snowflake_database.this : key => value.id
+  }
+  description = "Snowflake databases"
+  sensitive   = false
+}
+#
+output "snowflake_database_grants" {
+  value = {
+    for key, value in snowflake_database_grant.this : key => value.id
+  }
+  description = "Snowflake database grants"
+  sensitive   = false
 }
 #
 output "snowflake_resource_monitor" {
@@ -51,13 +62,7 @@ output "snowflake_warehouse_grant" {
   sensitive   = false
 }
 #
-output "snowflake_database_grant" {
-  value = {
-    for key, value in snowflake_database_grant.this : key => value.id
-  }
-  description = "Snowflake database grant ids"
-  sensitive   = false
-}
+
 #
 output "snowflake_schema_grant" {
   value = {
@@ -74,12 +79,6 @@ output "snowflake_schema_grant" {
 #   description = "Snowflake database/schema tag(s)"
 #   sensitive   = false
 # }
-#
-output "current_account_alias" {
-  value       = data.aws_iam_account_alias.current.account_alias
-  sensitive   = false
-  description = "The IAM Account Alias"
-}
 #
 output "snowflake_procedure" {
   value = {
