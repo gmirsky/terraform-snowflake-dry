@@ -14,6 +14,6 @@ resource "snowflake_warehouse" "this" {
   statement_timeout_in_seconds        = each.value["statement_timeout_in_seconds"]
   wait_for_provisioning               = each.value["wait_for_provisioning"]
   warehouse_size                      = each.value["warehouse_size"]
-  #max_concurrency_amount              = each.value["max_concurrency_amount"
+  max_concurrency_level               = each.value["max_concurrency_level"]
 }
 #
