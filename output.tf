@@ -9,6 +9,15 @@ output "snowflake_database_grants" {
   description = "Snowflake database grants"
   sensitive   = false
 }
+#
+output "snowflake_file_format_ids" {
+  value       = module.snowflake_file_format.snowflake_file_format_ids
+  description = "Snowflake file format ids"
+  sensitive   = false
+}
+#
+
+
 
 output "snowflake_resource_monitor" {
   value = {

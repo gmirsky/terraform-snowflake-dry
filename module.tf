@@ -17,3 +17,15 @@ module "snowflake_database_grant" {
   ]
 }
 #
+module "snowflake_file_format" {
+  source = "./snowflake_file_format"
+  snowflake_file_formats = var.snowflake_file_formats
+    providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_database,
+    snowflake_schema.this
+  ]
+}
+#
