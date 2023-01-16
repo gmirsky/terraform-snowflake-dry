@@ -6,7 +6,7 @@ variable "snowflake_users" {
         name                    = string
         login_name              = string
         comment                 = string
-        password                = string
+        password                = optional(string, "Ch@angeM3N0w!")
         disabled                = optional(bool, false)
         display_name            = string
         email                   = string
@@ -23,3 +23,7 @@ variable "snowflake_users" {
   )
 }
 #
+/*
+password             = coalesce(each.value["generate_user_password"], var.default_generate_user_password) ? random_password.users[each.key].result : null
+  must_change_password = coalesce(each.value["must_change_password"], var.default_must_change_password)
+*/
