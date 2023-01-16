@@ -1,15 +1,6 @@
 output "snowflake_database" {
-  value = {
-    for key, value in snowflake_database.this : key => value.id
-  }
-  description = "Snowflake database ids"
-  sensitive   = false
-}
-#
-output "snowflake_database1_name" {
-  value       = snowflake_database.this["db1"].name
-  description = "Snowflake database [db1]"
-  sensitive   = false
+  value     = module.snowflake_database.snowflake_database_id
+  sensitive = false
 }
 #
 output "snowflake_resource_monitor" {
