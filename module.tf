@@ -6,3 +6,14 @@ module "snowflake_database" {
   }
 }
 #
+module "snowflake_database_grant" {
+  source                    = "./snowflake_database_grant"
+  snowflake_database_grants = var.snowflake_database_grants
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_database
+  ]
+}
+#

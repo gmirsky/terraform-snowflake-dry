@@ -5,13 +5,11 @@ output "snowflake_database_ids" {
 }
 #
 output "snowflake_database_grants" {
-  value = {
-    for key, value in snowflake_database_grant.this : key => value.id
-  }
+  value       = module.snowflake_database_grant.snowflake_database_grants
   description = "Snowflake database grants"
   sensitive   = false
 }
-#
+
 output "snowflake_resource_monitor" {
   value = {
     for key, value in snowflake_resource_monitor.this : key => value.id
