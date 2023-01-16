@@ -1,5 +1,4 @@
 resource "snowflake_database" "this" {
-  provider                    = snowflake.sysadmin
   for_each                    = var.snowflake_databases
   name                        = each.value["name"]
   comment                     = each.value["comment"]

@@ -1,8 +1,6 @@
-output "snowflake_database_id" {
-  value = {
-    for key, value in snowflake_database.this : key => value.id
-  }
-  description = "Snowflake databases"
+output "snowflake_database_ids" {
+  value       = module.snowflake_database.snowflake_database_id
+  description = "Module Snowflake database ids"
   sensitive   = false
 }
 #

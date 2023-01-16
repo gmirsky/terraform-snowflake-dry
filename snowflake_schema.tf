@@ -8,7 +8,7 @@ resource "snowflake_schema" "this" {
   is_managed          = each.value["is_managed"]
   data_retention_days = each.value["data_retention_days"]
   depends_on = [
-    snowflake_database.this
+    module.snowflake_database
   ]
 }
 #
