@@ -20,7 +20,7 @@ resource "snowflake_procedure" "this" {
     }
   }
   depends_on = [
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

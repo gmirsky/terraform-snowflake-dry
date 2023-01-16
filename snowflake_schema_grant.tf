@@ -9,7 +9,7 @@ resource "snowflake_schema_grant" "this" {
   enable_multiple_grants = each.value["enable_multiple_grants"]
   with_grant_option      = each.value["with_grant_option"]
   depends_on = [
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

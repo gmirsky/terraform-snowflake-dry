@@ -7,7 +7,7 @@ resource "snowflake_sequence" "this" {
   comment   = each.value["comment"]
   increment = each.value["increment"]
   depends_on = [
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

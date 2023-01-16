@@ -6,7 +6,7 @@ module "snowflake_database" {
   }
 }
 #
-module "snowflake_database_grant" {
+module "snowflake_database_grants" {
   source                    = "./snowflake_database_grant"
   snowflake_database_grants = var.snowflake_database_grants
   providers = {
@@ -17,15 +17,26 @@ module "snowflake_database_grant" {
   ]
 }
 #
+module "snowflake_schema" {
+  source            = "./snowflake_schema"
+  snowflake_schemas = var.snowflake_schemas
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_database
+  ]
+}
+#
 module "snowflake_file_format" {
-  source = "./snowflake_file_format"
+  source                 = "./snowflake_file_format"
   snowflake_file_formats = var.snowflake_file_formats
-    providers = {
+  providers = {
     snowflake = snowflake.sysadmin
   }
   depends_on = [
     module.snowflake_database,
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

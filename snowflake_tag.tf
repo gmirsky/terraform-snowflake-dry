@@ -7,7 +7,7 @@ resource "snowflake_tag" "this" {
   allowed_values = each.value["allowed_values"]
   comment        = each.value["comment"]
   depends_on = [
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

@@ -32,7 +32,7 @@ resource "snowflake_table" "this" {
     }
   }
   depends_on = [
-    snowflake_schema.this
+    module.snowflake_schema
   ]
 }
 #

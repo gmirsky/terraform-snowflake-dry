@@ -1,4 +1,4 @@
-output "snowflake_database_grants" {
+output "snowflake_database_grant_ids" {
   value = {
     for key, value in snowflake_database_grant.this : key => value.id
   }

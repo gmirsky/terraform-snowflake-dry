@@ -4,9 +4,15 @@ output "snowflake_database_ids" {
   sensitive   = false
 }
 #
-output "snowflake_database_grants" {
-  value       = module.snowflake_database_grant.snowflake_database_grants
+output "snowflake_database_grant_ids" {
+  value       = module.snowflake_database_grants.snowflake_database_grant_ids
   description = "Snowflake database grants"
+  sensitive   = false
+}
+#
+output "snowflake_schema_ids" {
+  value       = module.snowflake_schema.snowflake_schema_ids
+  description = "Snowflake schema ids"
   sensitive   = false
 }
 #
@@ -35,14 +41,7 @@ output "snowflake_role" {
   sensitive   = false
 }
 #
-output "snowflake_schema" {
-  value = {
-    for key, value in snowflake_schema.this : key => value.id
-  }
-  description = "Snowflake schema ids"
-  sensitive   = false
-}
-#
+
 output "snowflake_user" {
   value = {
     for key, value in snowflake_user.this : key => value.id
