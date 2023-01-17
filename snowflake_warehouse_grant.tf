@@ -8,7 +8,7 @@ resource "snowflake_warehouse_grant" "this" {
   with_grant_option      = each.value["with_grant_option"]
   depends_on = [
     module.snowflake_warehouse,
-    snowflake_role.this
+    module.snowflake_role
   ]
 }
 #

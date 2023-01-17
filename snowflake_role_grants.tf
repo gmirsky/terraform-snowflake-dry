@@ -6,7 +6,7 @@ resource "snowflake_role_grants" "this" {
   users                  = each.value["users"]
   enable_multiple_grants = each.value["enable_multiple_grants"]
   depends_on = [
-    snowflake_role.this,
+    module.snowflake_role,
     snowflake_user.this
   ]
 }

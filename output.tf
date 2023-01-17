@@ -27,6 +27,13 @@ output "snowflake_warehouse_ids" {
   description = "Snowflake warehouse ids"
   sensitive   = false
 }
+#
+output "snowflake_role_ids" {
+  value       = module.snowflake_role.snowflake_role_ids
+  description = "Snowflake role ids"
+  sensitive   = false
+}
+#
 
 
 
@@ -39,14 +46,7 @@ output "snowflake_resource_monitor" {
   sensitive   = false
 }
 #
-output "snowflake_role" {
-  value = {
-    for key, value in snowflake_role.this : key => value.id
-  }
-  description = "Snowflake role ids"
-  sensitive   = false
-}
-#
+
 
 output "snowflake_user" {
   value = {

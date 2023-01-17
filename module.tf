@@ -48,3 +48,11 @@ module "snowflake_warehouse" {
   }
 }
 #
+module "snowflake_role" {
+  source          = "./snowflake_role"
+  snowflake_roles = var.snowflake_roles
+  providers = {
+    snowflake = snowflake.accountadmin
+  }
+}
+#

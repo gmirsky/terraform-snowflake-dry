@@ -18,7 +18,7 @@ resource "snowflake_user" "this" {
   must_change_password    = each.value["must_change_password"]
   depends_on = [
     module.snowflake_warehouse,
-    snowflake_role.this
+    module.snowflake_role
   ]
 }
 #
