@@ -48,6 +48,18 @@ module "snowflake_warehouse" {
   }
 }
 #
+module "snowflake_warehouse_grant" {
+  source                     = "./snowflake_warehouse_grant"
+  snowflake_warehouse_grants = var.snowflake_warehouse_grants
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_warehouse,
+    module.snowflake_role
+  ]
+}
+#
 module "snowflake_role" {
   source          = "./snowflake_role"
   snowflake_roles = var.snowflake_roles

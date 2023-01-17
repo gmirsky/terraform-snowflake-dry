@@ -34,8 +34,12 @@ output "snowflake_role_ids" {
   sensitive   = false
 }
 #
-
-
+output "snowflake_warehouse_grant_ids" {
+  value       = module.snowflake_warehouse_grant.snowflake_warehouse_grant_ids
+  description = "Snowflake warehouse grant ids"
+  sensitive   = false
+}
+#
 
 
 output "snowflake_resource_monitor" {
@@ -57,14 +61,7 @@ output "snowflake_user" {
 }
 #
 
-output "snowflake_warehouse_grant" {
-  value = {
-    for key, value in snowflake_warehouse_grant.this : key => value.id
-  }
-  description = "Snowflake warehouse grant ids"
-  sensitive   = false
-}
-#
+
 
 #
 output "snowflake_schema_grant" {
