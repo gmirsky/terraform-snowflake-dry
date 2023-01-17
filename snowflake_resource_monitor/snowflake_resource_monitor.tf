@@ -1,5 +1,4 @@
 resource "snowflake_resource_monitor" "this" {
-  provider                   = snowflake.accountadmin
   for_each                   = var.snowflake_resource_monitors
   name                       = each.value["name"]
   credit_quota               = each.value["credit_quota"]
@@ -10,15 +9,12 @@ resource "snowflake_resource_monitor" "this" {
   suspend_triggers           = each.value["suspend_triggers"]
   suspend_immediate_triggers = each.value["suspend_immediate_triggers"]
   warehouses                 = each.value["warehouses"]
-  start_timestamp = formatdate(
+  start_timestamp = each.value["start_timestamp"] != null ? each.value["start_timestamp"] : formatdate(
     "YYYY-MM-DD hh:mm",
     timeadd(
       timestamp(),
       "5m"
     )
-  ) #each.value["start_timestamp"]
-  depends_on = [
-    module.snowflake_warehouse
-  ]
+  )
 }
 #

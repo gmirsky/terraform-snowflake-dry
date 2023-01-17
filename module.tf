@@ -113,3 +113,14 @@ module "snowflake_schema_grant" {
   ]
 }
 #
+module "snowflake_resource_monitor" {
+  source                      = "./snowflake_resource_monitor"
+  snowflake_resource_monitors = var.snowflake_resource_monitors
+  providers = {
+    snowflake = snowflake.accountadmin
+  }
+  depends_on = [
+    module.snowflake_warehouse
+  ]
+}
+#

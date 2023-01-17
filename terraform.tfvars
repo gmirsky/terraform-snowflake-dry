@@ -569,22 +569,92 @@ snowflake_schema_grants = {
 /*
    Other options for snowflake_schema_grants are... 
 
-OWNERSHIP 
-CREATE VIEW 
-CREATE EXTERNAL TABLE 
-CREATE ROW ACCESS POLICY 
-CREATE TEMPORARY TABLE 
-CREATE TAG 
-CREATE PIPE 
-CREATE STREAM 
-CREATE MATERIALIZED VIEW 
-CREATE TABLE 
-CREATE TASK 
-CREATE FUNCTION 
-CREATE FILE FORMAT 
-CREATE STAGE 
-CREATE SEQUENCE 
-CREATE PROCEDURE 
-CREATE MASKING POLICY 
-ADD SEARCH OPTIMIZATION
+      OWNERSHIP 
+      CREATE VIEW 
+      CREATE EXTERNAL TABLE 
+      CREATE ROW ACCESS POLICY 
+      CREATE TEMPORARY TABLE 
+      CREATE TAG 
+      CREATE PIPE 
+      CREATE STREAM 
+      CREATE MATERIALIZED VIEW 
+      CREATE TABLE 
+      CREATE TASK 
+      CREATE FUNCTION 
+      CREATE FILE FORMAT 
+      CREATE STAGE 
+      CREATE SEQUENCE 
+      CREATE PROCEDURE 
+      CREATE MASKING POLICY 
+      ADD SEARCH OPTIMIZATION
 */
+#
+snowflake_resource_monitors = {
+  db1_warehouse_resource_monitor = {
+    name            = "db1_wh_rm"
+    credit_quota    = 10
+    set_for_account = false
+    frequency       = "DAILY"
+    #start_timestamp = "2024-12-31 00:01"
+    end_timestamp   = null
+    notify_triggers = [
+      70,
+      80,
+      90
+    ]
+    suspend_triggers = [
+      100
+    ]
+    suspend_immediate_triggers = [
+      110
+    ]
+    warehouses = [
+      "test_database_1_wh"
+    ]
+  },
+  db2_warehouse_resource_monitor = {
+    name            = "db2_wh_rm"
+    credit_quota    = 10
+    set_for_account = false
+    frequency       = "DAILY"
+    #start_timestamp = "2024-12-31 00:01"
+    end_timestamp = null
+    notify_triggers = [
+      70,
+      80,
+      90
+    ]
+    suspend_triggers = [
+      100
+    ]
+    suspend_immediate_triggers = [
+      110
+    ]
+    warehouses = [
+      "test_database_2_wh"
+    ]
+  },
+  db3_warehouse_resource_monitor = {
+    name            = "db3_wh_rm"
+    credit_quota    = 10
+    set_for_account = false
+    frequency       = "DAILY"
+    #start_timestamp = "2024-12-31 00:01"
+    end_timestamp = null
+    notify_triggers = [
+      70,
+      80,
+      90
+    ]
+    suspend_triggers = [
+      100
+    ]
+    suspend_immediate_triggers = [
+      110
+    ]
+    warehouses = [
+      "test_database_3_wh"
+    ]
+  }
+}
+#
