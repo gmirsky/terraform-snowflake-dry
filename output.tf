@@ -45,6 +45,24 @@ output "snowflake_user_ids" {
   description = "Snowflake user ids"
   sensitive   = "false"
 }
+#
+output "snowflake_sequence_ids" {
+  value       = module.snowflake_sequence.snowflake_sequence_ids
+  description = "Snowflake sequence ids"
+  sensitive   = false
+}
+#
+output "snowflake_sequence_fully_qualified_names" {
+  value       = module.snowflake_sequence.snowflake_sequence_fully_qualified_names
+  description = "Snowflake sequence fully qualified names"
+  sensitive   = false
+}
+#
+output "snowflake_sequence_next_values" {
+  value       = module.snowflake_sequence.snowflake_sequence_next_values
+  description = "Snowflake sequence next values"
+  sensitive   = false
+}
 
 
 

@@ -80,3 +80,14 @@ module "snowflake_user" {
   ]
 }
 #
+module "snowflake_sequence" {
+  source              = "./snowflake_sequence"
+  snowflake_sequences = var.snowflake_sequences
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_schema
+  ]
+}
+#
