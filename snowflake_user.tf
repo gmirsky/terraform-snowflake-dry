@@ -17,7 +17,7 @@ resource "snowflake_user" "this" {
   rsa_public_key_2        = each.value["rsa_public_key_2"]
   must_change_password    = each.value["must_change_password"]
   depends_on = [
-    snowflake_warehouse.this,
+    module.snowflake_warehouse,
     snowflake_role.this
   ]
 }

@@ -40,3 +40,11 @@ module "snowflake_file_format" {
   ]
 }
 #
+module "snowflake_warehouse" {
+  source               = "./snowflake_warehouse"
+  snowflake_warehouses = var.snowflake_warehouses
+  providers = {
+    snowflake = snowflake.accountadmin
+  }
+}
+#

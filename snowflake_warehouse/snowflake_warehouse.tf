@@ -1,5 +1,4 @@
 resource "snowflake_warehouse" "this" {
-  provider                            = snowflake.sysadmin
   for_each                            = var.snowflake_warehouses
   name                                = each.value["name"]
   auto_resume                         = each.value["auto_resume"]

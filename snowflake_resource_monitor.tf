@@ -18,7 +18,7 @@ resource "snowflake_resource_monitor" "this" {
     )
   ) #each.value["start_timestamp"]
   depends_on = [
-    snowflake_warehouse.this
+    module.snowflake_warehouse
   ]
 }
 #

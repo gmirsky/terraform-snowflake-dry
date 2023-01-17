@@ -22,6 +22,12 @@ output "snowflake_file_format_ids" {
   sensitive   = false
 }
 #
+output "snowflake_warehouse_ids" {
+  value       = module.snowflake_warehouse.snowflake_warehouse_ids
+  description = "Snowflake warehouse ids"
+  sensitive   = false
+}
+
 
 
 
@@ -50,14 +56,7 @@ output "snowflake_user" {
   sensitive   = false
 }
 #
-output "snowflake_warehouse" {
-  value = {
-    for key, value in snowflake_warehouse.this : key => value.id
-  }
-  description = "Snowflake warehouse ids"
-  sensitive   = false
-}
-#
+
 output "snowflake_warehouse_grant" {
   value = {
     for key, value in snowflake_warehouse_grant.this : key => value.id
