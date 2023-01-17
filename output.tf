@@ -111,8 +111,13 @@ output "snowflake_table_owners" {
   description = "Snowflake table owners"
   sensitive   = false
 }
-
-
+#
+output "snowflake_view_ids" {
+  value       = module.snowflake_view.snowflake_view_ids
+  description = "Snowflake view ids"
+  sensitive   = false
+}
+#
 
 
 #

@@ -169,3 +169,11 @@ module "snowflake_table" {
   ]
 }
 #
+module "snowflake_view" {
+  source          = "./snowflake_view"
+  snowflake_views = var.snowflake_views
+  depends_on = [
+    module.snowflake_table
+  ]
+}
+#
