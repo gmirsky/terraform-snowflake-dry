@@ -70,6 +70,15 @@ output "snowflake_tag_ids" {
   sensitive   = false
 }
 #
+output "snowflake_schema_grant_ids" {
+  value       = module.snowflake_schema_grant.snowflake_schema_grant_ids
+  description = "Snowflake schema grant ids"
+  sensitive   = false
+}
+#
+
+
+
 
 
 output "snowflake_resource_monitor" {
@@ -77,14 +86,6 @@ output "snowflake_resource_monitor" {
     for key, value in snowflake_resource_monitor.this : key => value.id
   }
   description = "Snowflake resource monitor ids"
-  sensitive   = false
-}
-#
-output "snowflake_schema_grant" {
-  value = {
-    for key, value in snowflake_schema_grant.this : key => value.id
-  }
-  description = "Snowflake schema grant ids"
   sensitive   = false
 }
 #

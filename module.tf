@@ -102,3 +102,14 @@ module "snowflake_tag" {
   ]
 }
 #
+module "snowflake_schema_grant" {
+  source                  = "./snowflake_schema_grant"
+  snowflake_schema_grants = var.snowflake_schema_grants
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_schema
+  ]
+}
+#
