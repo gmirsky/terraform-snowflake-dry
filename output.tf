@@ -87,17 +87,20 @@ output "snowflake_role_grants_ids" {
   description = "Snowflake role grants ids"
   sensitive   = false
 }
-
-
-
-
+#
 output "snowflake_procedure" {
-  value = {
-    for key, value in snowflake_procedure.this : key => value.id
-  }
+  value       = module.snowflake_procedure.snowflake_procedure_ids
   description = "Snowflake procedure ids"
   sensitive   = false
 }
+
+
+
+
+
+
+
+
 #
 output "snowflake_current_account" {
   value       = data.snowflake_current_account.this.account
@@ -116,4 +119,3 @@ output "snowflake_current_url" {
   description = "Snowflake current URL"
   sensitive   = false
 }
-#

@@ -21,7 +21,7 @@ resource "snowflake_procedure_grant" "this" {
     }
   }
   depends_on = [
-    snowflake_procedure.this
+    module.snowflake_procedure
   ]
 }
 #

@@ -136,3 +136,13 @@ module "snowflake_role_grants" {
   ]
 }
 #
+module "snowflake_procedure" {
+  source               = "./snowflake_procedure"
+  snowflake_procedures = var.snowflake_procedures
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_schema
+  ]
+}

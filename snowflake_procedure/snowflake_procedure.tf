@@ -1,5 +1,4 @@
 resource "snowflake_procedure" "this" {
-  provider            = snowflake.sysadmin
   for_each            = var.snowflake_procedures
   name                = each.value["name"]
   database            = each.value["database"]
@@ -19,8 +18,5 @@ resource "snowflake_procedure" "this" {
       type = item.value.type
     }
   }
-  depends_on = [
-    module.snowflake_schema
-  ]
 }
 #
