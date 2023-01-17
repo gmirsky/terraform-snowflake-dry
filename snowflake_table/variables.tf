@@ -7,7 +7,7 @@ variable "snowflake_tables" {
         schema              = string
         name                = string
         comment             = optional(string)
-        change_tracking     = bool
+        change_tracking     = optional(bool, false)
         cluster_by          = optional(list(string))
         data_retention_days = optional(number) #deprecated
         column = list(

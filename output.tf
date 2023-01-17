@@ -88,7 +88,7 @@ output "snowflake_role_grants_ids" {
   sensitive   = false
 }
 #
-output "snowflake_procedure" {
+output "snowflake_procedure_ids" {
   value       = module.snowflake_procedure.snowflake_procedure_ids
   description = "Snowflake procedure ids"
   sensitive   = false
@@ -100,8 +100,17 @@ output "snowflake_procedure_grant_ids" {
   sensitive   = false
 }
 #
-
-
+output "snowflake_table_ids" {
+  value       = module.snowflake_table.snowflake_table_ids
+  description = "Snowflake table ids"
+  sensitive   = false
+}
+#
+output "snowflake_table_owners" {
+  value       = module.snowflake_table.snowflake_table_owners
+  description = "Snowflake table owners"
+  sensitive   = false
+}
 
 
 

@@ -9,7 +9,7 @@ resource "snowflake_view" "this" {
   is_secure  = each.value["is_secure"]
   statement  = each.value["statement"]
   depends_on = [
-    snowflake_table.this
+    module.snowflake_table
   ]
 }
 #

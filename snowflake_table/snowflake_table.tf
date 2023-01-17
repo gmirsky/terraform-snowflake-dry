@@ -1,5 +1,4 @@
 resource "snowflake_table" "this" {
-  provider        = snowflake.sysadmin
   for_each        = var.snowflake_tables
   database        = each.value["database"]
   schema          = each.value["schema"]
@@ -31,8 +30,5 @@ resource "snowflake_table" "this" {
       }
     }
   }
-  depends_on = [
-    module.snowflake_schema
-  ]
 }
 #
