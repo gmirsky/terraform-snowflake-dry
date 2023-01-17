@@ -82,19 +82,15 @@ output "snowflake_resource_monitor_ids" {
   sensitive   = false
 }
 #
+output "snowflake_role_grants_ids" {
+  value       = module.snowflake_role_grants.snowflake_role_grants_ids
+  description = "Snowflake role grants ids"
+  sensitive   = false
+}
 
 
 
 
-#
-# output "snowflake_tag" {
-#   value = {
-#     for key, value in snowflake_tag.this : key => value.id
-#   }
-#   description = "Snowflake database/schema tag(s)"
-#   sensitive   = false
-# }
-#
 output "snowflake_procedure" {
   value = {
     for key, value in snowflake_procedure.this : key => value.id

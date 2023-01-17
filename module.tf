@@ -124,3 +124,15 @@ module "snowflake_resource_monitor" {
   ]
 }
 #
+module "snowflake_role_grants" {
+  source                = "./snowflake_role_grants"
+  snowflake_role_grants = var.snowflake_role_grants
+  providers = {
+    snowflake = snowflake.accountadmin
+  }
+  depends_on = [
+    module.snowflake_role,
+    module.snowflake_user
+  ]
+}
+#

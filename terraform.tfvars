@@ -596,7 +596,7 @@ snowflake_resource_monitors = {
     set_for_account = false
     frequency       = "DAILY"
     #start_timestamp = "2024-12-31 00:01"
-    end_timestamp   = null
+    end_timestamp = null
     notify_triggers = [
       70,
       80,
@@ -655,6 +655,19 @@ snowflake_resource_monitors = {
     warehouses = [
       "test_database_3_wh"
     ]
+  }
+}
+#
+snowflake_role_grants = {
+  grant1 = {
+    role_name = "test_database1_role"
+    roles     = []
+    users = [
+      "test_user_01",
+      "test_user_02",
+      "test_user_03"
+    ]
+    enable_multiple_grants = true
   }
 }
 #
