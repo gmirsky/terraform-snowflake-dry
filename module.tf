@@ -91,3 +91,14 @@ module "snowflake_sequence" {
   ]
 }
 #
+module "snowflake_tag" {
+  source         = "./snowflake_tag"
+  snowflake_tags = var.snowflake_tags
+  providers = {
+    snowflake = snowflake.sysadmin
+  }
+  depends_on = [
+    module.snowflake_schema
+  ]
+}
+#

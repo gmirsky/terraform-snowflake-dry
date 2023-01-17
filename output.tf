@@ -63,8 +63,13 @@ output "snowflake_sequence_next_values" {
   description = "Snowflake sequence next values"
   sensitive   = false
 }
-
-
+#
+output "snowflake_tag_ids" {
+  value       = module.snowflake_tag.snowflake_tag_ids
+  description = "Snowflake tag ids"
+  sensitive   = false
+}
+#
 
 
 output "snowflake_resource_monitor" {
