@@ -1,6 +1,5 @@
 #
 resource "snowflake_procedure_grant" "this" {
-  provider               = snowflake.sysadmin
   for_each               = var.snowflake_procedure_grants
   database_name          = each.value["database_name"]
   schema_name            = each.value["schema_name"]
@@ -20,8 +19,5 @@ resource "snowflake_procedure_grant" "this" {
       type = item.value.type
     }
   }
-  depends_on = [
-    module.snowflake_procedure
-  ]
 }
 #

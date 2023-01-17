@@ -93,8 +93,13 @@ output "snowflake_procedure" {
   description = "Snowflake procedure ids"
   sensitive   = false
 }
-
-
+#
+output "snowflake_procedure_grant_ids" {
+  value       = module.snowflake_procedure_grant.snowflake_procedure_grant_ids
+  description = "Snowflake procedure grant ids"
+  sensitive   = false
+}
+#
 
 
 
