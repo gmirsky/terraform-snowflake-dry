@@ -1,5 +1,4 @@
 resource "snowflake_user" "this" {
-  provider                = snowflake.useradmin
   for_each                = var.snowflake_users
   name                    = each.value["name"]
   login_name              = each.value["login_name"]
@@ -16,9 +15,5 @@ resource "snowflake_user" "this" {
   rsa_public_key          = each.value["rsa_public_key"]
   rsa_public_key_2        = each.value["rsa_public_key_2"]
   must_change_password    = each.value["must_change_password"]
-  depends_on = [
-    module.snowflake_warehouse,
-    module.snowflake_role
-  ]
 }
 #

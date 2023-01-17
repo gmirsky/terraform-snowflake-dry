@@ -68,3 +68,15 @@ module "snowflake_role" {
   }
 }
 #
+module "snowflake_user" {
+  source          = "./snowflake_user"
+  snowflake_users = var.snowflake_users
+  providers = {
+    snowflake = snowflake.useradmin
+  }
+  depends_on = [
+    module.snowflake_warehouse,
+    module.snowflake_role
+  ]
+}
+#
