@@ -32,7 +32,7 @@ variable "rsa_key_file_directory_path" {
 variable "encryption_algorithm" {
   type        = string
   description = "Encryption algorithm to be used for public and private keys"
-  deafult     = "RSA"
+  default     = "RSA"
   sensitive   = false
 }
 #

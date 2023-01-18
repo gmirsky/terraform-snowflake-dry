@@ -1,14 +1,14 @@
 variable "rsa_key_file_directory_name" {
-  type = string
+  type        = string
   description = "RSA key file directory name"
-  default = "rsa_pem_files"
-  sensitive = false
+  default     = "rsa_pem_files"
+  sensitive   = false
 }
 #
 variable "encryption_algorithm" {
   type        = string
   description = "Encryption algorithm to be used for public and private keys"
-  deafult     = "RSA"
+  default     = "RSA"
   sensitive   = false
 }
 #

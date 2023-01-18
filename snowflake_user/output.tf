@@ -8,7 +8,7 @@ output "snowflake_user_ids" {
 #
 output "snowflake_user_public_keys" {
   value = {
-    for key, value in tls_private_key.this : key => value.public_key_pem
+    for key, value in tls_private_key.this : key => chomp(value.public_key_pem)
   }
   description = "Snowflake user public key"
   sensitive   = false
