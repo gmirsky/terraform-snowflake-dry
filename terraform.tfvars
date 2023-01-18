@@ -4,19 +4,19 @@ rsa_bits                    = 2048
 #
 snowflake_databases = {
   db1 = {
-    name                        = "test_database_1"
+    name                        = "TEST_DATABASE_1"
     comment                     = "Test Database 1"
     data_retention_time_in_days = 3
     is_transient                = false
   }
   db2 = {
-    name                        = "test_database_2"
+    name                        = "TEST_DATABASE_2"
     comment                     = "Test Database 2"
     data_retention_time_in_days = 3
     is_transient                = false
   }
   db3 = {
-    name                        = "test_database_3"
+    name                        = "TEST_DATABASE_3"
     comment                     = "Test Database 3"
     data_retention_time_in_days = 3
     is_transient                = false
@@ -25,72 +25,72 @@ snowflake_databases = {
 #
 snowflake_schemas = {
   db1_schema1 = {
-    database            = "test_database_1"
-    name                = "test_schema_1"
+    database            = "TEST_DATABASE_1"
+    name                = "TEST_SCHEMA_1"
     comment             = "Test Database 1, Test Schema 1"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db1_schema2 = {
-    database            = "test_database_1"
-    name                = "test_schema_2"
+    database            = "TEST_DATABASE_1"
+    name                = "TEST_SCHEMA_2"
     comment             = "Test Database 1, Test Schema 2"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db1_schema3 = {
-    database            = "test_database_1"
-    name                = "test_schema_3"
+    database            = "TEST_DATABASE_1"
+    name                = "TEST_SCHEMA_3"
     comment             = "Test Database 1, Test Schema 3"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db2_schema1 = {
-    database            = "test_database_2"
-    name                = "test_schema_1"
+    database            = "TEST_DATABASE_2"
+    name                = "TEST_SCHEMA_1"
     comment             = "Test Database 2, Test Schema 1"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db2_schema2 = {
-    database            = "test_database_2"
-    name                = "test_schema_2"
+    database            = "TEST_DATABASE_2"
+    name                = "TEST_SCHEMA_2"
     comment             = "Test Database 2, Test Schema 2"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db2_schema3 = {
-    database            = "test_database_2"
-    name                = "test_schema_3"
+    database            = "TEST_DATABASE_2"
+    name                = "TEST_SCHEMA_3"
     comment             = "Test Database 2, Test Schema 3"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db3_schema1 = {
-    database            = "test_database_3"
-    name                = "test_schema_1"
+    database            = "TEST_DATABASE_3"
+    name                = "TEST_SCHEMA_1"
     comment             = "Test Database 3, Test Schema 1"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db3_schema2 = {
-    database            = "test_database_3"
-    name                = "test_schema_2"
+    database            = "TEST_DATABASE_3"
+    name                = "TEST_SCHEMA_2"
     comment             = "Test Database 3, Test Schema 2"
     is_transient        = false
     is_managed          = false
     data_retention_days = 1
   },
   db3_schema3 = {
-    database            = "test_database_3"
-    name                = "test_schema_3"
+    database            = "TEST_DATABASE_3"
+    name                = "TEST_SCHEMA_3"
     comment             = "Test Database 3, Test Schema 3"
     is_transient        = false
     is_managed          = false
@@ -100,159 +100,159 @@ snowflake_schemas = {
 #
 snowflake_database_grants = {
   grant_usage_on_test_database_1 = {
-    database_name = "test_database_1"
-    privilege     = "usage"
+    database_name = "TEST_DATABASE_1"
+    privilege     = "USAGE"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_monitor_on_test_database_1 = {
-    database_name = "test_database_1"
-    privilege     = "monitor"
+    database_name = "TEST_DATABASE_1"
+    privilege     = "MONITOR"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_reference_on_test_database_1 = {
-    database_name = "test_database_1"
-    privilege     = "reference_usage"
+    database_name = "TEST_DATABASE_1"
+    privilege     = "REFERENCE_USAGE"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_modify_on_test_database_1 = {
-    database_name = "test_database_1"
-    privilege     = "modify"
+    database_name = "TEST_DATABASE_1"
+    privilege     = "MODIFY"
     roles = [
-      "test_database1_role"
+      "TEST_DATABASE_1_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_create_schema_on_test_database_1 = {
-    database_name = "test_database_1"
-    privilege     = "create schema"
+    database_name = "TEST_DATABASE_1"
+    privilege     = "CREATE SCHEMA"
     roles = [
-      "test_database1_role"
+      "TEST_DATABASE_1_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   }
   grant_usage_on_test_database_2 = {
-    database_name = "test_database_2"
-    privilege     = "usage"
+    database_name = "TEST_DATABASE_2"
+    privilege     = "USAGE"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_monitor_on_test_database_2 = {
-    database_name = "test_database_2"
-    privilege     = "monitor"
+    database_name = "TEST_DATABASE_2"
+    privilege     = "MONITOR"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_reference_on_test_database_2 = {
-    database_name = "test_database_2"
-    privilege     = "reference_usage"
+    database_name = "TEST_DATABASE_2"
+    privilege     = "REFERENCE_USAGE"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_modify_on_test_database_2 = {
-    database_name = "test_database_2"
-    privilege     = "modify"
+    database_name = "TEST_DATABASE_2"
+    privilege     = "MODIFY"
     roles = [
-      "test_database2_role"
+      "TEST_DATABASE_2_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_create_schema_on_test_database_2 = {
-    database_name = "test_database_2"
-    privilege     = "create schema"
+    database_name = "TEST_DATABASE_2"
+    privilege     = "CREATE SCHEMA"
     roles = [
-      "test_database2_role"
+      "TEST_DATABASE_2_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   }
   grant_usage_on_test_database_3 = {
-    database_name = "test_database_3"
-    privilege     = "usage"
+    database_name = "TEST_DATABASE_3"
+    privilege     = "USAGE"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_monitor_on_test_database_3 = {
-    database_name = "test_database_3"
-    privilege     = "monitor"
+    database_name = "TEST_DATABASE_3"
+    privilege     = "MONITOR"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_reference_on_test_database_3 = {
-    database_name = "test_database_3"
-    privilege     = "reference_usage"
+    database_name = "TEST_DATABASE_3"
+    privilege     = "REFERENCE_USAGE"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_modify_on_test_database_3 = {
-    database_name = "test_database_3"
-    privilege     = "modify"
+    database_name = "TEST_DATABASE_3"
+    privilege     = "MODIFY"
     roles = [
-      "test_database3_role"
+      "TEST_DATABASE_3_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   },
   grant_create_schema_on_test_database_3 = {
-    database_name = "test_database_3"
-    privilege     = "create schema"
+    database_name = "TEST_DATABASE_3"
+    privilege     = "CREATE SCHEMA"
     roles = [
-      "test_database3_role"
+      "TEST_DATABASE_3_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
@@ -262,9 +262,9 @@ snowflake_database_grants = {
 #
 snowflake_file_formats = {
   file_format_1 = {
-    database    = "test_database_1"
-    schema      = "test_schema_1"
-    name        = "test_file_format_1"
+    database    = "TEST_DATABASE_1"
+    schema      = "TEST_SCHEMA_1"
+    name        = "TEST_FILE_FORMAT_1"
     comment     = "Test Database 1, Test Schema 1, File Format 1"
     format_type = "CSV"
   }
@@ -272,10 +272,10 @@ snowflake_file_formats = {
 #
 snowflake_warehouses = {
   db1_warehouse = {
-    name                                = "test_database_1_wh"
+    name                                = "TEST_DATABASE_1_WH"
     auto_resume                         = true
     auto_suspend                        = 60
-    comment                             = "This is a data warehouse for test_database_1"
+    comment                             = "This is a data warehouse for TEST_DATABASE_1"
     initially_suspended                 = true
     max_cluster_count                   = 3
     max_concurrency_amount              = null
@@ -288,10 +288,10 @@ snowflake_warehouses = {
     warehouse_size                      = "X-Small"
   },
   db2_warehouse = {
-    name                                = "test_database_2_wh"
+    name                                = "TEST_DATABASE_2_WH"
     auto_resume                         = true
     auto_suspend                        = 60
-    comment                             = "This is a data warehouse for test_database_2"
+    comment                             = "This is a data warehouse for TEST_DATABASE_2"
     initially_suspended                 = true
     max_cluster_count                   = 3
     max_concurrency_amount              = null
@@ -304,10 +304,10 @@ snowflake_warehouses = {
     warehouse_size                      = "X-Small"
   },
   db3_warehouse = {
-    name                                = "test_database_3_wh"
+    name                                = "TEST_DATABASE_3_WH"
     auto_resume                         = true
     auto_suspend                        = 60
-    comment                             = "This is a data warehouse for test_database_3"
+    comment                             = "This is a data warehouse for TEST_DATABASE_3"
     initially_suspended                 = true
     max_cluster_count                   = 3
     max_concurrency_amount              = null
@@ -323,118 +323,118 @@ snowflake_warehouses = {
 #
 snowflake_roles = {
   db1_role = {
-    name    = "test_database1_role"
-    comment = "A test role for test_database_1"
+    name    = "TEST_DATABASE_1_ROLE"
+    comment = "A test role for TEST_DATABASE_1"
   },
   db2_role = {
-    name    = "test_database2_role"
-    comment = "A test role for test_database_2"
+    name    = "TEST_DATABASE_2_ROLE"
+    comment = "A test role for TEST_DATABASE_2"
   },
   db3_role = {
-    name    = "test_database3_role"
-    comment = "A test role for test_database_3"
+    name    = "TEST_DATABASE_3_ROLE"
+    comment = "A test role for TEST_DATABASE_3"
   },
   db1_role_ro = {
-    name    = "test_database1_read_only_role"
-    comment = "A test read only role for test_database_1"
+    name    = "TEST_DATABASE_1_READ_ONLY_ROLE"
+    comment = "A test read only role for TEST_DATABASE_1"
   },
   db2_role_ro = {
-    name    = "test_database2_read_only_role"
-    comment = "A test read only role for test_database_2"
+    name    = "TEST_DATABASE_2_READ_ONLY_ROLE"
+    comment = "A test read only role for TEST_DATABASE_2"
   },
   db3_role_ro = {
-    name    = "test_database3_read_only_role"
-    comment = "A test read only role for test_database_3"
+    name    = "TEST_DATABASE_3_READ_ONLY_ROLE"
+    comment = "A test read only role for TEST_DATABASE_3"
   }
 }
 #
 snowflake_warehouse_grants = {
-  grant_usage_on_test_database_1_wh = {
-    warehouse_name = "test_database_1_wh"
-    privilege      = "usage"
+  grant_usage_on_test_database_1_WH = {
+    warehouse_name = "TEST_DATABASE_1_WH"
+    privilege      = "USAGE"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_operate_on_test_database_1_wh = {
-    warehouse_name = "test_database_1_wh"
-    privilege      = "operate"
+  grant_operate_on_test_database_1_WH = {
+    warehouse_name = "TEST_DATABASE_1_WH"
+    privilege      = "OPERATE"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_monitor_on_test_database_1_wh = {
-    warehouse_name = "test_database_1_wh"
-    privilege      = "monitor"
+  grant_monitor_on_test_database_1_WH = {
+    warehouse_name = "TEST_DATABASE_1_WH"
+    privilege      = "MONITOR"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_usage_on_test_database_2_wh = {
-    warehouse_name = "test_database_2_wh"
-    privilege      = "usage"
+  grant_usage_on_test_database_2_WH = {
+    warehouse_name = "TEST_DATABASE_2_WH"
+    privilege      = "USAGE"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_operate_on_test_database_2_wh = {
-    warehouse_name = "test_database_2_wh"
-    privilege      = "operate"
+  grant_operate_on_test_database_2_WH = {
+    warehouse_name = "TEST_DATABASE_2_WH"
+    privilege      = "OPERATE"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_monitor_on_test_database_2_wh = {
-    warehouse_name = "test_database_2_wh"
-    privilege      = "monitor"
+  grant_monitor_on_test_database_2_WH = {
+    warehouse_name = "TEST_DATABASE_2_WH"
+    privilege      = "MONITOR"
     roles = [
-      "test_database2_role",
-      "test_database2_read_only_role"
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_2_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_usage_on_test_database_3_wh = {
-    warehouse_name = "test_database_3_wh"
-    privilege      = "usage"
+  grant_usage_on_test_database_3_WH = {
+    warehouse_name = "TEST_DATABASE_3_WH"
+    privilege      = "USAGE"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_operate_on_test_database_3_wh = {
-    warehouse_name = "test_database_3_wh"
-    privilege      = "operate"
+  grant_operate_on_test_database_3_WH = {
+    warehouse_name = "TEST_DATABASE_3_WH"
+    privilege      = "OPERATE"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
   },
-  grant_monitor_on_test_database_3_wh = {
-    warehouse_name = "test_database_3_wh"
-    privilege      = "monitor"
+  grant_monitor_on_test_database_3_WH = {
+    warehouse_name = "TEST_DATABASE_3_WH"
+    privilege      = "MONITOR"
     roles = [
-      "test_database3_role",
-      "test_database3_read_only_role"
+      "TEST_DATABASE_3_ROLE",
+      "TEST_DATABASE_3_READ_ONLY_ROLE"
     ]
     enable_multiple_grants = true
     with_grant_option      = false
@@ -443,8 +443,8 @@ snowflake_warehouse_grants = {
 #
 snowflake_users = {
   user1 = {
-    name                    = "test_user_01"
-    login_name              = "test_user_01"
+    name                    = "TEST_USER_1"
+    login_name              = "TEST_USER_1"
     comment                 = "Test User #01 "
     password                = "Ch@ngeM3N0W!"
     disabled                = false
@@ -452,16 +452,16 @@ snowflake_users = {
     email                   = "test.user1@notarealdomain.com"
     first_name              = "Test"
     last_name               = "User1"
-    default_warehouse       = "test_database_1_wh"
+    default_warehouse       = "TEST_DATABASE_1_WH"
     default_secondary_roles = []
-    default_role            = "test_database1_role"
+    default_role            = "TEST_DATABASE_1_ROLE"
     rsa_public_key          = null
     rsa_public_key_2        = null
     must_change_password    = true
   },
   user2 = {
-    name                    = "test_user_02"
-    login_name              = "test_user_02"
+    name                    = "TEST_USER_2"
+    login_name              = "TEST_USER_2"
     comment                 = "Test User #02 "
     password                = "Ch@ngeM3N0W!"
     disabled                = false
@@ -469,16 +469,16 @@ snowflake_users = {
     email                   = "test.user2@notarealdomain.com"
     first_name              = "Test"
     last_name               = "User2"
-    default_warehouse       = "test_database_2_wh"
+    default_warehouse       = "TEST_DATABASE_2_WH"
     default_secondary_roles = []
-    default_role            = "test_database2_role"
+    default_role            = "TEST_DATABASE_2_ROLE"
     rsa_public_key          = null
     rsa_public_key_2        = null
     must_change_password    = true
   },
   user3 = {
-    name                    = "test_user_03"
-    login_name              = "test_user_03"
+    name                    = "TEST_USER_3"
+    login_name              = "TEST_USER_3"
     comment                 = "Test User #03 "
     password                = "Ch@ngeM3N0W!"
     disabled                = false
@@ -486,9 +486,9 @@ snowflake_users = {
     email                   = "test.user3@notarealdomain.com"
     first_name              = "Test"
     last_name               = "User3"
-    default_warehouse       = "test_database_3_wh"
+    default_warehouse       = "TEST_DATABASE_3_WH"
     default_secondary_roles = []
-    default_role            = "test_database3_role"
+    default_role            = "TEST_DATABASE_3_ROLE"
     rsa_public_key          = null
     rsa_public_key_2        = null
     must_change_password    = true
@@ -496,80 +496,79 @@ snowflake_users = {
 }
 #
 snowflake_sequences = {
-  test_schema_1 = {
-    database  = "test_database_1"
-    schema    = "test_schema_1"
-    name      = "test_sequence_1"
+  TEST_SCHEMA_1 = {
+    database  = "TEST_DATABASE_1"
+    schema    = "TEST_SCHEMA_1"
+    name      = "TEST_SEQUENCE_1"
     comment   = "Test Sequence 1"
     increment = 1
   }
-  test_schema_2 = {
-    database  = "test_database_2"
-    schema    = "test_schema_1"
-    name      = "test_sequence_1"
+  TEST_SCHEMA_2 = {
+    database  = "TEST_DATABASE_2"
+    schema    = "TEST_SCHEMA_1"
+    name      = "TEST_SEQUENCE_1"
     comment   = "Test Sequence 1"
     increment = 1
   }
-  test_schema_3 = {
-    database  = "test_database_3"
-    schema    = "test_schema_1"
-    name      = "test_sequence_1"
+  TEST_SCHEMA_3 = {
+    database  = "TEST_DATABASE_3"
+    schema    = "TEST_SCHEMA_1"
+    name      = "TEST_SEQUENCE_1"
     comment   = "Test Sequence 1"
     increment = 1
   }
 }
 #
 snowflake_tags = {
-  db1_schema1_tag1 = {
-    name     = "db1_schema1_tag1"
-    database = "test_database_1"
-    schema   = "test_schema_1"
+  DB1_SCHEMA1_TAG1 = {
+    name     = "DB1_SCHEMA1_TAG1"
+    database = "TEST_DATABASE_1"
+    schema   = "TEST_SCHEMA_1"
     allowed_values = [
-      "db1_schema1_tag1",
-      "db_1_schema_1_tag_1"
+      "DB1_SCHEMA1_TAG1",
+      "DB_1_SCHEMA_1_TAG_1"
     ]
-    comment = "test_database_1.test_schema_1 tag: db1_schema1_tag1"
+    comment = "TEST_DATABASE_1.TEST_SCHEMA_1 tag: DB1_SCHEMA1_TAG1"
   }
 }
 #
 snowflake_schema_grants = {
   grant_usage_on_db1_schema1 = {
-    database_name = "test_database_1"
-    schema_name   = "test_schema_1"
-    privilege     = "usage"
+    database_name = "TEST_DATABASE_1"
+    schema_name   = "TEST_SCHEMA_1"
+    privilege     = "USAGE"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   }
   grant_monitor_on_db1_schema1 = {
-    database_name = "test_database_1"
-    schema_name   = "test_schema_1"
-    privilege     = "monitor"
+    database_name = "TEST_DATABASE_1"
+    schema_name   = "TEST_SCHEMA_1"
+    privilege     = "MONITOR"
     roles = [
-      "test_database1_role",
-      "test_database1_read_only_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_1_READ_ONLY_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   }
   grant_modify_on_db1_schema1 = {
-    database_name = "test_database_1"
-    schema_name   = "test_schema_1"
-    privilege     = "modify"
+    database_name = "TEST_DATABASE_1"
+    schema_name   = "TEST_SCHEMA_1"
+    privilege     = "MODIFY"
     roles = [
-      "test_database1_role"
+      "TEST_DATABASE_1_ROLE"
     ]
     shares                 = []
     enable_multiple_grants = true
     with_grant_option      = false
   }
 }
-
 /*
    Other options for snowflake_schema_grants are... 
 
@@ -595,7 +594,7 @@ snowflake_schema_grants = {
 #
 snowflake_resource_monitors = {
   db1_warehouse_resource_monitor = {
-    name            = "db1_wh_rm"
+    name            = "TEST_DATABASE_1_WH_RM"
     credit_quota    = 10
     set_for_account = false
     frequency       = "DAILY"
@@ -613,11 +612,11 @@ snowflake_resource_monitors = {
       110
     ]
     warehouses = [
-      "test_database_1_wh"
+      "TEST_DATABASE_1_WH"
     ]
   },
   db2_warehouse_resource_monitor = {
-    name            = "db2_wh_rm"
+    name            = "TEST_DATABASE_2_WH_RM"
     credit_quota    = 10
     set_for_account = false
     frequency       = "DAILY"
@@ -635,11 +634,11 @@ snowflake_resource_monitors = {
       110
     ]
     warehouses = [
-      "test_database_2_wh"
+      "TEST_DATABASE_2_WH"
     ]
   },
   db3_warehouse_resource_monitor = {
-    name            = "db3_wh_rm"
+    name            = "TEST_DATABASE_3_WH_RM"
     credit_quota    = 10
     set_for_account = false
     frequency       = "DAILY"
@@ -657,29 +656,29 @@ snowflake_resource_monitors = {
       110
     ]
     warehouses = [
-      "test_database_3_wh"
+      "TEST_DATABASE_3_WH"
     ]
   }
 }
 #
 snowflake_role_grants = {
   grant1 = {
-    role_name = "test_database1_role"
+    role_name = "TEST_DATABASE_1_ROLE"
     roles     = []
     users = [
-      "test_user_01",
-      "test_user_02",
-      "test_user_03"
+      "TEST_USER_1",
+      "TEST_USER_2",
+      "TEST_USER_3"
     ]
     enable_multiple_grants = true
   }
 }
 #
 snowflake_procedures = {
-  snowflake_procedure_01_01 = {
-    name                = "snowflake_procedure_01"
-    database            = "test_database_1"
-    schema              = "test_schema_1"
+  SNOWFLAKE_PROCEDURE_1_01 = {
+    name                = "SNOWFLAKE_PROCEDURE_1"
+    database            = "TEST_DATABASE_1"
+    schema              = "TEST_SCHEMA_1"
     language            = "JAVASCRIPT"
     comment             = "Snowflake Procedure 01"
     return_type         = "VARCHAR"
@@ -691,19 +690,19 @@ EOT
     null_input_behavior = "RETURNS NULL ON NULL INPUT"
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
   }
-  snowflake_procedure_01_02 = {
-    name                = "snowflake_procedure_01"
-    database            = "test_database_2"
-    schema              = "test_schema_1"
+  SNOWFLAKE_PROCEDURE_1_02 = {
+    name                = "SNOWFLAKE_PROCEDURE_1"
+    database            = "TEST_DATABASE_2"
+    schema              = "TEST_SCHEMA_1"
     language            = "JAVASCRIPT"
     comment             = "Snowflake Procedure 01"
     return_type         = "VARCHAR"
@@ -715,19 +714,19 @@ EOT
     null_input_behavior = "RETURNS NULL ON NULL INPUT"
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
   }
-  snowflake_procedure_01_03 = {
-    name                = "snowflake_procedure_01"
-    database            = "test_database_3"
-    schema              = "test_schema_1"
+  SNOWFLAKE_PROCEDURE_1_03 = {
+    name                = "SNOWFLAKE_PROCEDURE_1"
+    database            = "TEST_DATABASE_3"
+    schema              = "TEST_SCHEMA_1"
     language            = "JAVASCRIPT"
     comment             = "Snowflake Procedure 01"
     return_type         = "VARCHAR"
@@ -739,11 +738,11 @@ EOT
     null_input_behavior = "RETURNS NULL ON NULL INPUT"
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
@@ -752,79 +751,79 @@ EOT
 #
 snowflake_procedure_grants = {
   snowflake_procedure_grant_01 = {
-    database_name          = "test_database_1"
-    schema_name            = "test_schema_1"
+    database_name          = "TEST_DATABASE_1"
+    schema_name            = "TEST_SCHEMA_1"
     enable_multiple_grants = true
     on_future              = false
     privilege              = "USAGE"
-    procedure_name         = "snowflake_procedure_01"
+    procedure_name         = "SNOWFLAKE_PROCEDURE_1"
     return_type            = "VARCHAR"
     roles = [
-      "test_database1_role",
-      "test_database2_role",
-      "test_database3_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_3_ROLE"
     ]
     shares            = []
     with_grant_option = false
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
   }
   snowflake_procedure_grant_02 = {
-    database_name          = "test_database_2"
-    schema_name            = "test_schema_1"
+    database_name          = "TEST_DATABASE_2"
+    schema_name            = "TEST_SCHEMA_1"
     enable_multiple_grants = true
     on_future              = false
     privilege              = "USAGE"
-    procedure_name         = "snowflake_procedure_01"
+    procedure_name         = "SNOWFLAKE_PROCEDURE_1"
     return_type            = "VARCHAR"
     roles = [
-      "test_database1_role",
-      "test_database2_role",
-      "test_database3_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_3_ROLE"
     ]
     shares            = []
     with_grant_option = false
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
   }
   snowflake_procedure_grant_03 = {
-    database_name          = "test_database_3"
-    schema_name            = "test_schema_1"
+    database_name          = "TEST_DATABASE_3"
+    schema_name            = "TEST_SCHEMA_1"
     enable_multiple_grants = true
     on_future              = false
     privilege              = "USAGE"
-    procedure_name         = "snowflake_procedure_01"
+    procedure_name         = "SNOWFLAKE_PROCEDURE_1"
     return_type            = "VARCHAR"
     roles = [
-      "test_database1_role",
-      "test_database2_role",
-      "test_database3_role"
+      "TEST_DATABASE_1_ROLE",
+      "TEST_DATABASE_2_ROLE",
+      "TEST_DATABASE_3_ROLE"
     ]
     shares            = []
     with_grant_option = false
     arguments = [
       {
-        name = "arg1"
+        name = "ARG1"
         type = "VARCHAR"
       },
       {
-        name = "arg2"
+        name = "ARG2"
         type = "DATE"
       }
     ]
@@ -833,23 +832,23 @@ snowflake_procedure_grants = {
 #
 snowflake_views = {
   view1 = {
-    database   = "test_database_1"
-    schema     = "test_schema_1"
-    name       = "test_view_1"
+    database   = "TEST_DATABASE_1"
+    schema     = "TEST_SCHEMA_1"
+    name       = "TEST_VIEW_1"
     comment    = "Test Database 1, Test Schema 1, View 1"
     or_replace = false
     is_secure  = false
     statement  = <<-SQL
-    select * from test_table_1;
+    select * from TEST_TABLE_1;
 SQL 
   }
 }
 #
 snowflake_tables = {
-  test_table_1 = {
-    database        = "test_database_1"
-    schema          = "test_schema_1"
-    name            = "test_table_1"
+  TEST_TABLE_1 = {
+    database        = "TEST_DATABASE_1"
+    schema          = "TEST_SCHEMA_1"
+    name            = "TEST_TABLE_1"
     comment         = "Test Database 1, Test Schema 1, Table 1"
     change_tracking = false
     cluster_by      = ["to_date(DATE)"]
@@ -866,7 +865,7 @@ snowflake_tables = {
       #   comment  = "id with sequence"
       #   default = [
       #     {
-      #       sequence = "test_sequence_1"
+      #       sequence = "TEST_SEQUENCE_1"
       #     }
       #   ]
       #   identity = []
