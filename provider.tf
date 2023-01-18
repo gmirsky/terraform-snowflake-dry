@@ -18,3 +18,9 @@ provider "snowflake" {
   role  = "USERADMIN"
 }
 #
+provider "tls" {
+}
+#
+provider "local" {
+}
+#

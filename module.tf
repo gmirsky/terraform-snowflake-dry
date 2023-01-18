@@ -69,8 +69,11 @@ module "snowflake_role" {
 }
 #
 module "snowflake_user" {
-  source          = "./snowflake_user"
-  snowflake_users = var.snowflake_users
+  source                      = "./snowflake_user"
+  snowflake_users             = var.snowflake_users
+  rsa_key_file_directory_path = "${abspath(path.module)}/rsa_pem_files"
+  encryption_algorithm        = var.encryption_algorithm
+  rsa_bits                    = var.rsa_bits
   providers = {
     snowflake = snowflake.useradmin
   }

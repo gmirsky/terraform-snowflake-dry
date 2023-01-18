@@ -12,8 +12,8 @@ resource "snowflake_user" "this" {
   default_warehouse       = each.value["default_warehouse"]
   default_secondary_roles = each.value["default_secondary_roles"]
   default_role            = each.value["default_role"]
-  rsa_public_key          = each.value["rsa_public_key"]
-  rsa_public_key_2        = each.value["rsa_public_key_2"]
-  must_change_password    = each.value["must_change_password"]
+  rsa_public_key       = tls_private_key.this[each.key].public_key_pem != null ? tls_private_key.this[each.key].public_key_pem : chomp(tls_private_key.this[each.key].public_key_pem)
+  rsa_public_key_2     = each.value["rsa_public_key_2"]
+  must_change_password = each.value["must_change_password"]
 }
 #

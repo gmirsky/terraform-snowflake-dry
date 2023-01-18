@@ -23,3 +23,23 @@ variable "snowflake_users" {
   )
 }
 #
+variable "rsa_key_file_directory_path" {
+  type        = string
+  description = "RSA key file directory path"
+  sensitive   = false
+}
+#
+variable "encryption_algorithm" {
+  type        = string
+  description = "Encryption algorithm to be used for public and private keys"
+  deafult     = "RSA"
+  sensitive   = false
+}
+#
+variable "rsa_bits" {
+  type        = number
+  description = "RSA key length"
+  default     = 2048
+  sensitive   = false
+}
+#

@@ -118,6 +118,18 @@ output "snowflake_view_ids" {
   sensitive   = false
 }
 #
+output "snowflake_user_public_keys" {
+  value       = module.snowflake_user.snowflake_user_public_keys
+  description = "Snowflake user public keys"
+  sensitive   = false
+}
+#
+output "snowflake_user_public_pem_file_names" {
+  value       = module.snowflake_user.public_key_file_names
+  description = "Snowflake user public PEM file names"
+  sensitive   = false
+}
+#
 
 
 #
@@ -138,3 +150,4 @@ output "snowflake_current_url" {
   description = "Snowflake current URL"
   sensitive   = false
 }
+#
