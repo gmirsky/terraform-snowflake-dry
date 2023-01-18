@@ -34,11 +34,11 @@ output "snowflake_role_ids" {
   sensitive   = false
 }
 #
-output "snowflake_warehouse_grant_ids" {
-  value       = module.snowflake_warehouse_grant.snowflake_warehouse_grant_ids
-  description = "Snowflake warehouse grant ids"
-  sensitive   = false
-}
+# output "snowflake_warehouse_grant_ids" {
+#   value       = module.snowflake_warehouse_grant.snowflake_warehouse_grant_ids
+#   description = "Snowflake warehouse grant ids"
+#   sensitive   = false
+# }
 #
 output "snowflake_user_ids" {
   value       = module.snowflake_user.snowflake_user_ids
@@ -129,9 +129,6 @@ output "snowflake_user_public_pem_file_names" {
   description = "Snowflake user public PEM file names"
   sensitive   = false
 }
-#
-
-
 #
 output "snowflake_current_account" {
   value       = data.snowflake_current_account.this.account
