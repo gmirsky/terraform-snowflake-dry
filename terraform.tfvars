@@ -831,6 +831,20 @@ snowflake_procedure_grants = {
   }
 }
 #
+snowflake_views = {
+  view1 = {
+    database   = "test_database_1"
+    schema     = "test_schema_1"
+    name       = "test_view_1"
+    comment    = "Test Database 1, Test Schema 1, View 1"
+    or_replace = false
+    is_secure  = false
+    statement  = <<-SQL
+    select * from test_table_1;
+SQL 
+  }
+}
+#
 snowflake_tables = {
   test_table_1 = {
     database        = "test_database_1"
@@ -841,20 +855,24 @@ snowflake_tables = {
     cluster_by      = ["to_date(DATE)"]
     #data_retention_days = 1 #deprecated
     column = [
+      ###
+      ### Commented out the below column since the snowflake provider creates 
+      ### inconsistent results. Sometimes it works, sometimes it errors. 
+      ###
+      # {
+      #   name     = "ID"
+      #   type     = "NUMBER(38,0)" #"int"
+      #   nullable = true
+      #   comment  = "id with sequence"
+      #   default = [
+      #     {
+      #       sequence = "test_sequence_1"
+      #     }
+      #   ]
+      #   identity = []
+      # },
       {
-        name     = "id"
-        type     = "int"
-        nullable = true
-        comment  = "id with sequence"
-        default = [
-          {
-            sequence = "test_sequence_1"
-          }
-        ]
-        identity = []
-      },
-      {
-        name     = "identity"
+        name     = "IDENTITY"
         type     = "NUMBER(38,0)"
         nullable = true
         comment  = "identity"
@@ -867,7 +885,7 @@ snowflake_tables = {
         ]
       },
       {
-        name     = "data"
+        name     = "DATA"
         type     = "text"
         comment  = "data column"
         nullable = false
@@ -883,7 +901,7 @@ snowflake_tables = {
         identity = []
       },
       {
-        name     = "extra"
+        name     = "EXTRA"
         type     = "VARIANT"
         comment  = "extra data"
         nullable = true
@@ -893,22 +911,8 @@ snowflake_tables = {
     ]
     primary_key = {
       name = "my_key"
-      keys = ["data"]
+      keys = ["DATA"]
     }
-  }
-}
-#
-snowflake_views = {
-  view1 = {
-    database   = "test_database_1"
-    schema     = "test_schema_1"
-    name       = "test_view_1"
-    comment    = "Test Database 1, Test Schema 1, View 1"
-    or_replace = false
-    is_secure  = false
-    statement  = <<-SQL
-    select * from test_table_1;
- SQL 
   }
 }
 #
