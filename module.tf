@@ -48,17 +48,18 @@ module "snowflake_warehouse" {
   }
 }
 #
-module "snowflake_warehouse_grant" {
-  source                     = "./snowflake_warehouse_grant"
-  snowflake_warehouse_grants = var.snowflake_warehouse_grants
-  providers = {
-    snowflake = snowflake.sysadmin
-  }
-  depends_on = [
-    module.snowflake_warehouse,
-    module.snowflake_role
-  ]
-}
+# module "snowflake_warehouse_grant" {
+#   source                     = "./snowflake_warehouse_grant"
+#   snowflake_warehouse_grants = var.snowflake_warehouse_grants
+#   providers = {
+#     snowflake = snowflake.sysadmin
+#   }
+#   depends_on = [
+#     module.snowflake_warehouse,
+#     module.snowflake_role,
+#     module.snowflake_database
+#   ]
+# }
 #
 module "snowflake_role" {
   source          = "./snowflake_role"
@@ -168,7 +169,9 @@ module "snowflake_table" {
     snowflake = snowflake.sysadmin
   }
   depends_on = [
-    module.snowflake_schema
+    module.snowflake_database,
+    module.snowflake_schema,
+    module.snowflake_sequence # needed if a table has a sequence
   ]
 }
 #
@@ -176,6 +179,9 @@ module "snowflake_view" {
   source          = "./snowflake_view"
   snowflake_views = var.snowflake_views
   depends_on = [
+    module.snowflake_database,
+    module.snowflake_schema,
+    module.snowflake_sequence, # needed if a table has a sequence
     module.snowflake_table
   ]
 }
