@@ -1,5 +1,4 @@
 resource "snowflake_file_format" "this" {
-  #provider                       = snowflake.sysadmin
   for_each                       = var.snowflake_file_formats
   database                       = each.value["database"]
   schema                         = each.value["schema"]
