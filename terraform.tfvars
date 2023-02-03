@@ -765,16 +765,20 @@ snowflake_procedure_grants = {
     ]
     shares            = []
     with_grant_option = false
-    arguments = [
-      {
-        name = "ARG1"
-        type = "VARCHAR"
-      },
-      {
-        name = "ARG2"
-        type = "DATE"
-      }
-    ]
+    # arguments = [
+    #   {
+    #     name = "ARG1"
+    #     type = "VARCHAR"
+    #   },
+    #   {
+    #     name = "ARG2"
+    #     type = "DATE"
+    #   }
+    # ]
+    argument_data_types = [
+      "VARCHAR", 
+      "DATE"
+      ]
   }
   snowflake_procedure_grant_02 = {
     database_name          = "TEST_DATABASE_2"
@@ -791,16 +795,20 @@ snowflake_procedure_grants = {
     ]
     shares            = []
     with_grant_option = false
-    arguments = [
-      {
-        name = "ARG1"
-        type = "VARCHAR"
-      },
-      {
-        name = "ARG2"
-        type = "DATE"
-      }
-    ]
+    # arguments = [
+    #   {
+    #     name = "ARG1"
+    #     type = "VARCHAR"
+    #   },
+    #   {
+    #     name = "ARG2"
+    #     type = "DATE"
+    #   }
+    # ]
+    argument_data_types = [
+      "VARCHAR", 
+      "DATE"
+      ]
   }
   snowflake_procedure_grant_03 = {
     database_name          = "TEST_DATABASE_3"
@@ -817,16 +825,20 @@ snowflake_procedure_grants = {
     ]
     shares            = []
     with_grant_option = false
-    arguments = [
-      {
-        name = "ARG1"
-        type = "VARCHAR"
-      },
-      {
-        name = "ARG2"
-        type = "DATE"
-      }
-    ]
+    # arguments = [
+    #   {
+    #     name = "ARG1"
+    #     type = "VARCHAR"
+    #   },
+    #   {
+    #     name = "ARG2"
+    #     type = "DATE"
+    #   }
+    # ]
+    argument_data_types = [
+      "VARCHAR", 
+      "DATE"
+      ]
   }
 }
 #
