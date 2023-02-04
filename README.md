@@ -137,7 +137,7 @@ docker run --tty --rm --volume "$(pwd):/tf" --workdir /tf bridgecrew/checkov:lat
 You should get output like this (hopefully!)
 
 ```powershell
-docker run --tty --rm --volume "$(pwd):/tf" --workdir /tf bridgecrew/checkov --directory /tf --download-external-modules truedirectory /tf --download-external-modules true
+docker run --tty --rm --volume "$(pwd):/tf" --workdir /tf bridgecrew/checkov:latest --directory /tf --download-external-modules truedirectory /tf --download-external-modules true
 
        _               _
    ___| |__   ___  ___| | _______   __
@@ -169,7 +169,7 @@ docker run --rm -it -v "$(pwd):/src" aquasec/tfsec:latest --tfvars-file /src/ter
 You should get output like this (hopefully!)
 
 ```powershell
-docker run --rm -it -v "$(pwd):/src" aquasec/tfsec --tfvars-file /src/terraform.tfvars /src
+docker run --rm -it -v "$(pwd):/src" aquasec/tfsec:latest --tfvars-file /src/terraform.tfvars /src
   timings/terraform.tfvars /src
   ──────────────────────────────────────────
   disk i/o             169.3991ms
