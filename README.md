@@ -131,7 +131,7 @@ Use the following commands to scan the Terraform code for vulnerabilities in you
 
 ```powershell
 docker pull bridgecrew/checkov:latest
-docker run --tty --rm --volume "$(pwd):/tf" --workdir /tf bridgecrew/checkov --directory /tf --download-external-modules true
+docker run --tty --rm --volume "$(pwd):/tf" --workdir /tf bridgecrew/checkov:latest --directory /tf --download-external-modules true
 ```
 
 You should get output like this (hopefully!)
@@ -163,7 +163,7 @@ Use the following commands to scan the Terraform code for vulnerabilities in you
 
 ```powershell
 docker pull aquasec/tfsec:latest
-docker run --rm -it -v "$(pwd):/src" aquasec/tfsec --tfvars-file /src/terraform.tfvars /src
+docker run --rm -it -v "$(pwd):/src" aquasec/tfsec:latest --tfvars-file /src/terraform.tfvars /src
 ```
 
 You should get output like this (hopefully!)
