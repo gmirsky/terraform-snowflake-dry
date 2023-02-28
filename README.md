@@ -4,9 +4,7 @@
 
 **DO NOT USE!**  
 
-This is still a work in progress. 
-
-In the process of modularizing!
+Work on this project has been halted since the Snowflake provider gives inconsistent results between the AWS and Azure clouds.
 
 ## Objective
 
